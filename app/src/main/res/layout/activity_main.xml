@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
@@ -19,27 +20,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/labelNPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Nomor Hp :"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/inputNPhone"
+        app:layout_constraintStart_toStartOf="@+id/inputNPhone" />
+
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/inputNPhone"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:background="@drawable/border"
         android:ems="10"
         android:hint="Nomor Hp"
+        android:imeActionLabel="nomor hp"
         android:inputType="phone"
         android:minHeight="48dp"
         android:padding="10dp"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textTitle" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
-        android:layout_width="300dp"
+        android:id="@+id/inputMessage"
+        android:layout_width="0dp"
         android:layout_height="150dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="55dp"
         android:background="@drawable/border"
         android:ems="10"
         android:fontFamily="@font/roboto_medium"
@@ -49,11 +63,12 @@
         android:padding="10dp"
         android:textSize="14sp"
         android:typeface="normal"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
-        tools:layout_editor_absoluteX="56dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputNPhone" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonSend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -61,6 +76,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+        app:layout_constraintTop_toBottomOf="@+id/inputMessage" />
+
+    <TextView
+        android:id="@+id/labelMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Pesan :"
+        app:layout_constraintBottom_toTopOf="@+id/inputMessage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputNPhone"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="invisible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
